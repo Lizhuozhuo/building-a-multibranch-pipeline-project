@@ -6,6 +6,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                input id: '1', message: 'submit or cancel?', ok: 'submit', parameters: [choice(choices: ['master', 'release', 'dev'], description: '', name: 'branch'), text(defaultValue: '1', description: '', name: 'node num')], submitter: 'admin', submitterParameter: 'branch'
                 sh 'echo "Hello world!"'
                 sh 'echo "test the patch"'
                 sh 'echo "branch"'
