@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'echo "Hello world!"'
-                input message: 'Finished using the web site? (Click "Proceed" to continue)'
+                input message: 'test is pass or reject? (Click "Proceed" to continue)'
                 sh 'echo "reject"'
             }
         }
