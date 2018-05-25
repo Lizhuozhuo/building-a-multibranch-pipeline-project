@@ -1,8 +1,5 @@
 pipeline {
     agent any
-    parameters{
-        string(name: 'appname', defaultValue: 'sanbox-hessian', descriptions: 'app name')
-    }
     stages {
         stage('Build') {
             steps {
