@@ -6,9 +6,10 @@ pipeline {
                 message "Should we continue?"
                 ok "Yes, we should."
                 parameters {
-                    string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
-                    string(name: 'env', defaultValue: 'test', description: 'deploy env')
-                    string(name: 'node num', defaultValue: '1', description: 'node num')
+                    string(name: 'PERSON', defaultValue: 'paas-sandbox-boss', description: '项目名')
+                    string(name: 'env', defaultValue: 'master', description: '构建分支')
+                    string(name: 'node num', defaultValue: '1', description: '部署节点数')
+                    choice(choices: ['master', 'release', 'dev'], description: '选择构建分支', name: 'branch')
                 }
             }
             steps {
